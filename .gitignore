@@ -1,0 +1,21 @@
+# Credentials — never commit these
+.env
+*.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.python-version
+
+# Runtime files
+.job_history.txt
+.temp-*/
+
+# Output directories (optional — remove these lines if you want to commit reports)
+logs/
+daily-reports/
+
+# macOS
+.DS_Store

@@ -1,0 +1,64 @@
+name: Daily Job Check
+
+on:
+  schedule:
+    # 8:00 AM EST = 1:00 PM UTC
+    - cron: '0 13 * * *'
+    # 2:00 PM EST = 7:00 PM UTC
+    - cron: '0 19 * * *'
+    # 8:00 PM EST = 1:00 AM UTC next day
+    - cron: '0 1 * * *'
+
+  # Manual trigger for testing
+  workflow_dispatch:
+
+jobs:
+  check-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Set up environment variables
+        run: |
+          echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" >> $GITHUB_ENV
+          echo "BOOLEAN_TAVILY_API_KEY=${{ secrets.BOOLEAN_TAVILY_API_KEY }}" >> $GITHUB_ENV
+          echo "SLACK_WEBHOOK_URL=${{ secrets.SLACK_WEBHOOK_URL }}" >> $GITHUB_ENV
+
+      - name: Restore job history cache
+        uses: actions/cache@v4
+        with:
+          path: .job_history.txt
+          key: job-history-${{ github.run_id }}
+          restore-keys: |
+            job-history-
+
+      - name: Create output directories
+        run: |
+          mkdir -p logs
+          mkdir -p daily-reports
+
+      - name: Run daily job check
+        run: |
+          chmod +x scripts/daily-job-check.sh
+          ./scripts/daily-job-check.sh
+
+      - name: Upload reports as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: job-reports-${{ github.run_number }}
+          path: |
+            logs/
+            daily-reports/
+          retention-days: 14

@@ -1,0 +1,2 @@
+# Required for boolean_search.py (Tavily API calls)
+requests==2.32.3

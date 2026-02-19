@@ -1,0 +1,25 @@
+{
+  "_instructions": "Edit the 'string' values with your Boolean queries. Set enabled:false to pause a query without deleting it. See references/boolean-search-patterns.md for ready-to-use query strings by role type.",
+  "settings": {
+    "results_per_query": 5,
+    "delay_between_queries_seconds": 2,
+    "days_back": 7
+  },
+  "queries": [
+    {
+      "name": "My Role - Greenhouse + Lever (Remote US)",
+      "enabled": true,
+      "string": "(site:greenhouse.io OR site:lever.co) (\"your role title\" OR \"senior your role title\") (\"remote\" OR \"remote-first\") (\"US\" OR \"United States\")"
+    },
+    {
+      "name": "My Role - Workday (Remote)",
+      "enabled": true,
+      "string": "site:myworkdayjobs.com (\"your role title\" OR \"senior your role title\") (\"remote\" OR \"remote-first\")"
+    },
+    {
+      "name": "My Role - ICIMS (Remote)",
+      "enabled": false,
+      "string": "site:careers.icims.com (\"your role title\" OR \"senior your role title\") (\"remote\")"
+    }
+  ]
+}
