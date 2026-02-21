@@ -20,7 +20,56 @@ Four queries run per cycle (Greenhouse/Lever, Workday, ICIMS, plus one keyword v
 
 ---
 
-## Prerequisites
+## Not Technical? Start Here
+
+You don't need to write any code. Everything runs on GitHub's servers — no local setup required. Here's the full process from scratch:
+
+**Step 1: Create a free GitHub account**
+
+Go to [github.com](https://github.com) and sign up. It's free.
+
+**Step 2: Fork this repo**
+
+On this page, click the **Fork** button (top right). This copies the repo to your own GitHub account so you can customize it.
+
+**Step 3: Get your API keys**
+
+You need two (Slack is optional):
+
+- **Tavily** — go to [app.tavily.com](https://app.tavily.com), sign up for free, and copy your API key. Free tier gives you 1,000 searches/month, which is more than enough.
+- **Anthropic** — go to [console.anthropic.com](https://console.anthropic.com/settings/keys), sign up, add a credit card (you'll spend under $1/month), and copy your API key.
+- **Slack** (optional) — if you want alerts in Slack, follow [these instructions](https://api.slack.com/messaging/webhooks) to create an incoming webhook URL.
+
+**Step 4: Add your API keys to GitHub**
+
+In your forked repo, go to **Settings → Secrets and variables → Actions → New repository secret**.
+
+Add each key with the exact name shown:
+- Name: `ANTHROPIC_API_KEY` / Value: your Anthropic key
+- Name: `BOOLEAN_TAVILY_API_KEY` / Value: your Tavily key
+- Name: `SLACK_WEBHOOK_URL` / Value: your Slack webhook (optional)
+
+A "secret" is just a password field — GitHub keeps it hidden and injects it when the workflow runs.
+
+**Step 5: Edit your profile and queries**
+
+In your forked repo, click `my-profile.md`, then click the pencil icon to edit it. Replace the placeholder text with your actual target roles, experience, compensation floor, and red flags. The more specific you are, the better the scoring.
+
+Then do the same for `boolean-search-config.json`. Replace the placeholder query strings with real ones — see [`references/boolean-search-patterns.md`](references/boolean-search-patterns.md) for copy-paste queries by role type.
+
+**Step 6: Enable the workflow and run it**
+
+Go to the **Actions** tab in your repo. If prompted, click "I understand my workflows, go ahead and enable them." Then click **Daily Job Check → Run workflow** to trigger your first run manually.
+
+**Step 7: Check your results**
+
+Once the run finishes, click into it and look for the **Artifacts** section at the bottom. Download `job-reports` to see the scored report for your first run.
+
+After that, the workflow runs automatically at 8 AM, 2 PM, and 8 PM EST every day. If you set up Slack, high-scoring jobs will ping you directly.
+
+---
+
+## Prerequisites (for local / developer setup)
 
 - Python 3.10+
 - [Tavily API key](https://app.tavily.com) — free tier, 1,000 credits/month
@@ -30,7 +79,7 @@ Four queries run per cycle (Greenhouse/Lever, Workday, ICIMS, plus one keyword v
 
 ---
 
-## Setup
+## Setup (developer)
 
 ### 1. Fork or clone this repo
 
