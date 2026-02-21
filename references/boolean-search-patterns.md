@@ -13,7 +13,7 @@ Each ATS has slightly different URL patterns, so queries are grouped by platform
 3. Paste into `boolean-search-config.json` under the `queries` array
 4. Adjust the role title variants to match your actual target titles
 
-**Tip:** Start with Greenhouse + Lever (one combined query) and Workday. ICIMS is smaller but worth adding. Between these three queries you'll cover the majority of B2B SaaS and enterprise tech job postings.
+**Tip:** Start with Greenhouse + Lever (one combined query) and Workday. Add Ashby — it's growing fast among startups and often has postings that don't appear elsewhere. ICIMS rounds out enterprise coverage. Between these four you'll cover the majority of B2B SaaS and tech job postings.
 
 ---
 
@@ -37,6 +37,11 @@ site:myworkdayjobs.com ("product marketing manager" OR "senior product marketing
 ### ICIMS
 ```
 site:careers.icims.com ("product marketing manager" OR "senior product marketing manager") ("remote")
+```
+
+### Ashby
+```
+site:jobs.ashbyhq.com ("product marketing manager" OR "senior product marketing manager" OR "staff product marketing manager") ("remote" OR "remote-first") ("US" OR "United States")
 ```
 
 ---
@@ -63,6 +68,11 @@ site:myworkdayjobs.com ("growth marketing" OR "demand generation") ("manager" OR
 site:careers.icims.com ("growth marketing manager" OR "demand generation manager") ("remote")
 ```
 
+### Ashby
+```
+site:jobs.ashbyhq.com ("growth marketing manager" OR "senior growth marketing manager" OR "growth marketing lead") ("remote" OR "remote-first") ("US" OR "United States")
+```
+
 ---
 
 ## Product Manager
@@ -87,6 +97,11 @@ site:myworkdayjobs.com ("product manager" OR "senior product manager") ("remote"
 site:careers.icims.com ("product manager" OR "senior product manager") ("remote")
 ```
 
+### Ashby
+```
+site:jobs.ashbyhq.com ("product manager" OR "senior product manager" OR "staff product manager") ("remote" OR "remote-first") ("US" OR "United States")
+```
+
 ---
 
 ## Software Engineer — Backend
@@ -106,6 +121,11 @@ site:myworkdayjobs.com ("software engineer" OR "backend engineer") ("senior" OR 
 site:careers.icims.com ("software engineer" OR "backend developer") ("senior") ("remote")
 ```
 
+### Ashby
+```
+site:jobs.ashbyhq.com ("software engineer" OR "backend engineer") ("Python" OR "Go" OR "Java" OR "Node") ("senior" OR "staff") ("remote" OR "remote-first") ("US" OR "United States")
+```
+
 ---
 
 ## Software Engineer — Frontend
@@ -123,6 +143,11 @@ site:myworkdayjobs.com ("frontend engineer" OR "front-end engineer") ("senior" O
 ### ICIMS
 ```
 site:careers.icims.com ("frontend engineer" OR "front-end developer") ("senior") ("remote")
+```
+
+### Ashby
+```
+site:jobs.ashbyhq.com ("frontend engineer" OR "front-end engineer" OR "UI engineer") ("React" OR "TypeScript" OR "Next.js") ("senior" OR "staff") ("remote" OR "remote-first") ("US" OR "United States")
 ```
 
 ---
@@ -149,6 +174,11 @@ site:myworkdayjobs.com ("product designer" OR "UX designer") ("senior" OR "lead"
 site:careers.icims.com ("product designer" OR "UX designer") ("senior") ("remote")
 ```
 
+### Ashby
+```
+site:jobs.ashbyhq.com ("UX designer" OR "product designer" OR "senior product designer") ("Figma") ("remote" OR "remote-first") ("US" OR "United States")
+```
+
 ---
 
 ## Data Analyst / Data Scientist
@@ -171,6 +201,11 @@ site:myworkdayjobs.com ("data analyst" OR "data scientist" OR "analytics enginee
 ### ICIMS
 ```
 site:careers.icims.com ("data analyst" OR "data scientist") ("senior") ("remote")
+```
+
+### Ashby
+```
+site:jobs.ashbyhq.com ("data analyst" OR "data scientist" OR "analytics engineer") ("SQL" OR "Python" OR "dbt") ("senior") ("remote" OR "remote-first") ("US" OR "United States")
 ```
 
 ---

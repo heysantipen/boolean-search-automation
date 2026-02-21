@@ -20,6 +20,11 @@
       "name": "My Role - ICIMS (Remote)",
       "enabled": false,
       "string": "site:careers.icims.com (\"your role title\" OR \"senior your role title\") (\"remote\")"
+    },
+    {
+      "name": "My Role - Ashby (Remote)",
+      "enabled": false,
+      "string": "site:jobs.ashbyhq.com (\"your role title\" OR \"senior your role title\") (\"remote\" OR \"remote-first\") (\"US\" OR \"United States\")"
     }
   ]
 }
